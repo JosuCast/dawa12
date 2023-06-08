@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<br><br><br><br>
+<div class="container">
+	<!-- code here -->
+	<div class="card">
+		<div class="card-image">	
+			<h2 class="card-heading">
+				TECSUP Comedor
+				<small>Agrega un plato para la carta</small>
+			</h2>
+		</div>
+		<form class="card-form" [formGroup]="comidaForm" (ngSubmit)="agregarProducto()" enctype="multipart/form-data">
+            <div class="input">
+				<input type="file" (change)="onFileChange($event)" formControlName="imagen" class="input-field" name="imagen" required/>
+				
+			</div>
+			<div class="input">
+				<input type="text" formControlName="nombre" class="input-field" name="nombre" required/>
+				<label class="input-label">Nombre</label>
+			</div>
+			<div class="input">
+				<input type="text" formControlName="categoria" class="input-field" name="categoria"  required/>
+				<label class="input-label">Categoria</label>
+			</div>
+			<div class="action">
+				<button class="action-button" type="submit">Agregar Comida</button>
+			</div>
+		</form>
+        
+	</div>
+</div>

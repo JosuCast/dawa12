@@ -1,0 +1,42 @@
+<nav class="navbar  fixed-top nav-comedor">
+    <div class="container-fluid ">
+        <div class="titulo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          <a class="navbar-brand" href="#">TECSUP Comedor</a>
+        </div>
+        <div class="usuario">
+            <img src="https://cdn.euroinnova.edu.es/img/subidasEditor/funciones-de-un-administrador-de-empresa-1-1596991296.jpg" alt="" width="30px" height="30px">
+            <h4>admin</h4>
+        </div>
+        
+      
+      <div class="offcanvas offcanvas-start side-comedor" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">TECSUP Comedor</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body nav-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item" [routerLink]="['/lista-comidas']">
+                <i class="fa-2x  fa-solid fa-house"></i>
+              <a class="nav-link a active" aria-current="page" >Home</a>
+            </li>
+            <hr>
+            <li class="nav-item">
+                <i class="fa-2x fa-solid fa-list"></i>
+              <a class="nav-link a" href="#">Lista de Productos</a>
+            </li>
+            <hr>
+            <li class="nav-item">
+                <i class="fa-2x fa-solid fa-list-check"></i>
+                <a class="nav-link a" href="#">Elegir menu del dia</a>
+              </li>
+              <hr>
+          </ul>
+          <button class="btn btn-success boton-agregar" [routerLink]="['/agregar-comida']">Agregar platos a la carta</button>
+        </div>
+      </div>
+    </div>
+  </nav>

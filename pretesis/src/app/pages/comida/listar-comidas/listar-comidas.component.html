@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<br><br><br><br>
+<div class="lista">
+    <div>
+        <h1>Lista de Comidas </h1>
+    </div>
+    <div *ngIf="listComidas.length > 0" class="card-list">
+        <div  *ngFor="let comidas of listComidas" class="card" style="width: 18rem;">
+            <img src="{{comidas.fileUrl}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{comidas.nombre}}</h5>
+              <p class="card-text">{{comidas.categoria}} </p>
+              
+              <a href="#" class="btn btn-primary">Agregar al Menú</a>
+              <i class="fa-2x fa-solid fa-pen-to-square" [routerLink]="['/editar-comida', comidas._id]"></i>&nbsp;&nbsp;
+              <i class="fa-2x fa-solid fa-trash" (click)="eliminarComida(comidas._id)"></i>
+            </div>
+            
+          </div>
+         
+    </div>
+    <div id="val_a">Total Productos: {{elementos}}</div>
+</div>
+

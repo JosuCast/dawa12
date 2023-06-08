@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<br><br><br><br>
+<div class="container">
+	<!-- code here -->
+	<div class="card">
+		<div class="card-image">	
+			<h2 class="card-heading">
+				TECSUP Comedor
+				<small>Agrega un plato para la carta</small>
+			</h2>
+		</div>
+		<form class="card-form" [formGroup]="comidaForm" (ngSubmit)="editarProducto()" enctype="multipart/form-data">
+            <div class="input">
+				<input type="file"  class="input-field" name="imagen" required/>
+				
+			</div>
+			<div class="input">
+				<input type="text" formControlName="nombre" class="input-field" name="nombre" required/>
+				<label class="input-label">Nombre</label>
+                <div class="text-danger"
+                    *ngIf="comidaForm.get('nombre')?.hasError('required') && comidaForm.get('nombre')?.touched">
+                    <span>El producto <strong>es obligatorio</strong></span>
+                </div>
+			</div>
+			<div class="input">
+				<input type="text" formControlName="categoria" class="input-field" name="categoria"  required/>
+				<label class="input-label">Categoria</label>
+                <div class="text-danger"
+                    *ngIf="comidaForm.get('categoria')?.hasError('required') && comidaForm.get('categoria')?.touched">
+                    <span>El producto <strong>es obligatorio</strong></span>
+                </div>
+			</div>
+			<div class="action">
+				<button class="action-button" type="submit">Agregar Comida</button>
+			</div>
+		</form>
+        
+	</div>
+</div>
